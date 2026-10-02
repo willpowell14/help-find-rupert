@@ -1,7 +1,7 @@
 const acceptedAnswers = [
   ["central line", "central"],
   ["marble arch station", "marble arch"],
-  ["baker str", "baker street"],
+  ["baker st", "baker street"],
   ["13"],
   ["honi poke"]
 ];
