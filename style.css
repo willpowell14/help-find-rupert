@@ -1,0 +1,695 @@
+@import url('https://fonts.googleapis.com/css2?family=Courier+Prime:wght@400;700&display=swap');
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+}
+
+:root {
+  --police-blue: #005ea8;
+  --police-dark-blue: #003b71;
+  --ink: #161616;
+  --paper: #ffffff;
+  --paper-grey: #f3f3f3;
+  --line: #d6d6d6;
+}
+
+/* -------------------------
+   PAGE
+------------------------- */
+
+body {
+  margin: 0;
+  min-height: 100vh;
+
+  background: #e9e9e9;
+  color: var(--ink);
+
+  font-family: "Courier Prime", monospace;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  overflow-x: hidden;
+}
+
+/* -------------------------
+   POLICE HEADER
+------------------------- */
+
+.police-header {
+  width: 100%;
+  background: white;
+  border-bottom: 1px solid #ccc;
+}
+
+/* Blue / white checkerboard */
+.checker-strip {
+  width: 100%;
+  height: 26px;
+
+  background-color: white;
+
+  background-image:
+    linear-gradient(
+      45deg,
+      var(--police-blue) 25%,
+      transparent 25%,
+      transparent 75%,
+      var(--police-blue) 75%
+    ),
+    linear-gradient(
+      45deg,
+      var(--police-blue) 25%,
+      transparent 25%,
+      transparent 75%,
+      var(--police-blue) 75%
+    );
+
+  background-size: 40px 40px;
+  background-position: 0 0, 20px 20px;
+}
+
+.police-title {
+  width: 100%;
+  max-width: 780px;
+
+  margin: auto;
+  padding: 10px 20px;
+
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 10px;
+
+  color: white;
+}
+
+.police-title > div:last-child {
+  background: var(--police-blue);
+
+  padding: 7px 18px;
+
+  display: flex;
+  flex-direction: column;
+
+  line-height: 1;
+  letter-spacing: 1px;
+}
+
+.police-title span {
+  font-size: 15px;
+}
+
+.police-title strong {
+  font-size: 20px;
+  margin-top: 3px;
+}
+
+.crest-placeholder {
+  flex-shrink: 0;
+
+  background: var(--police-blue);
+
+  width: 52px;
+  height: 52px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  color: white;
+  font-size: 22px;
+}
+
+/* -------------------------
+   CASE FILE
+------------------------- */
+
+.case-file {
+  width: min(90%, 720px);
+
+  background: var(--paper);
+
+  margin: 45px auto;
+  padding: 50px 55px;
+
+  box-shadow:
+    0 2px 5px rgba(0, 0, 0, 0.08),
+    0 12px 30px rgba(0, 0, 0, 0.08);
+}
+
+.case-heading {
+  border-bottom: 2px solid var(--ink);
+
+  padding-bottom: 25px;
+  margin-bottom: 35px;
+}
+
+.case-reference {
+  color: var(--police-blue);
+
+  font-size: 13px;
+  font-weight: 700;
+
+  margin: 0 0 10px;
+
+  letter-spacing: 1.5px;
+}
+
+h1 {
+  margin: 0;
+
+  font-size: clamp(34px, 5vw, 42px);
+  line-height: 1.05;
+
+  letter-spacing: 1px;
+}
+
+.case-subtitle {
+  margin: 15px 0 0;
+
+  color: #555;
+
+  font-size: 15px;
+  line-height: 1.5;
+}
+
+/* -------------------------
+   QUESTIONS
+------------------------- */
+
+.evidence-panel {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.question {
+  border-bottom: 1px solid var(--line);
+
+  padding-bottom: 25px;
+}
+
+.question label {
+  display: block;
+
+  font-weight: 700;
+  font-size: 17px;
+
+  margin-bottom: 10px;
+}
+
+.item-number {
+  display: block;
+
+  color: var(--police-blue);
+
+  font-size: 11px;
+
+  margin-bottom: 5px;
+
+  letter-spacing: 1px;
+}
+
+.question input {
+  width: 100%;
+
+  min-height: 50px;
+
+  padding: 14px 15px;
+
+  font-family: "Courier Prime", monospace;
+
+  /* Keep at least 16px so iOS doesn't zoom */
+  font-size: 16px;
+
+  background: #fafafa;
+  color: var(--ink);
+
+  border: 1px solid #aaa;
+  border-radius: 0;
+
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.question input:focus {
+  outline: none;
+
+  border-color: var(--police-blue);
+
+  box-shadow:
+    inset 4px 0 0 var(--police-blue);
+}
+
+/* -------------------------
+   BUTTON
+------------------------- */
+
+button {
+  width: 100%;
+
+  min-height: 52px;
+
+  margin-top: 35px;
+
+  padding: 16px 20px;
+
+  background: var(--police-blue);
+
+  color: white;
+
+  border: none;
+
+  font-family: "Courier Prime", monospace;
+
+  font-size: 16px;
+  font-weight: 700;
+
+  letter-spacing: 1px;
+
+  cursor: pointer;
+
+  touch-action: manipulation;
+
+  transition:
+    background 0.2s ease,
+    transform 0.1s ease;
+}
+
+button:hover {
+  background: var(--police-dark-blue);
+}
+
+button:active {
+  transform: scale(0.99);
+}
+
+/* -------------------------
+   RESULT
+------------------------- */
+
+#message {
+  min-height: 25px;
+
+  text-align: center;
+
+  margin: 22px 0 0;
+
+  font-weight: 700;
+  font-size: 16px;
+
+  line-height: 1.4;
+}
+
+/* -------------------------
+   CASE FOOTER
+------------------------- */
+
+.case-footer {
+  margin-top: 35px;
+
+  padding-top: 18px;
+
+  border-top: 1px solid var(--line);
+
+  font-size: 11px;
+
+  letter-spacing: 1px;
+
+  color: #777;
+}
+
+.case-footer span {
+  color: var(--police-blue);
+  font-weight: 700;
+}
+
+/* -------------------------
+   SCREEN SHAKE
+------------------------- */
+
+.shake {
+  animation: screenShake 0.7s ease-in-out;
+}
+
+@keyframes screenShake {
+  0% {
+    transform: translate(0, 0);
+  }
+
+  10% {
+    transform: translate(-8px, 3px);
+  }
+
+  20% {
+    transform: translate(8px, -3px);
+  }
+
+  30% {
+    transform: translate(-10px, 2px);
+  }
+
+  40% {
+    transform: translate(10px, -2px);
+  }
+
+  50% {
+    transform: translate(-7px, 3px);
+  }
+
+  60% {
+    transform: translate(7px, -3px);
+  }
+
+  70% {
+    transform: translate(-4px, 2px);
+  }
+
+  80% {
+    transform: translate(4px, -2px);
+  }
+
+  90% {
+    transform: translate(-2px, 1px);
+  }
+
+  100% {
+    transform: translate(0, 0);
+  }
+}
+
+/* -------------------------
+   KEY / UNLOCK REVEAL
+------------------------- */
+
+.key-overlay {
+  position: fixed;
+  inset: 0;
+
+  padding: 20px;
+
+  background: rgba(0, 59, 113, 0);
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  opacity: 0;
+
+  z-index: 9999;
+
+  transition:
+    opacity 0.4s ease,
+    background 0.5s ease;
+}
+
+.key-overlay.show {
+  opacity: 1;
+
+  background: rgba(0, 59, 113, 0.95);
+}
+
+.key-icon {
+  width: min(220px, 55vw);
+  aspect-ratio: 1 / 1;
+
+  background: white;
+
+  border-radius: 50%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-size: clamp(78px, 22vw, 120px);
+
+  transform: scale(0) rotate(-20deg);
+
+  transition:
+    transform 0.8s cubic-bezier(.2, 1.5, .4, 1);
+}
+
+.key-overlay.show .key-icon {
+  transform: scale(1) rotate(0deg);
+}
+
+.unlock-text {
+  width: 100%;
+
+  margin-top: 30px;
+
+  color: white;
+
+  font-family: "Courier Prime", monospace;
+
+  font-size: clamp(18px, 5vw, 26px);
+  font-weight: 700;
+
+  text-align: center;
+  letter-spacing: clamp(1px, 1vw, 3px);
+
+  opacity: 0;
+
+  transform: translateY(15px);
+
+  transition:
+    opacity 0.5s ease 0.5s,
+    transform 0.5s ease 0.5s;
+}
+
+.key-overlay.show .unlock-text {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* -------------------------
+   VIDEO PAGE
+------------------------- */
+
+.video-page {
+  width: min(92%, 900px);
+
+  margin: 35px auto;
+
+  text-align: center;
+}
+
+.reveal-video {
+  display: block;
+
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+
+  margin-top: 30px;
+
+  border: 6px solid white;
+
+  box-shadow:
+    0 2px 6px rgba(0, 0, 0, 0.1),
+    0 12px 30px rgba(0, 0, 0, 0.15);
+}
+
+/* -------------------------
+   TABLET
+------------------------- */
+
+@media (max-width: 800px) {
+  .case-file {
+    width: 92%;
+
+    margin: 30px auto;
+
+    padding: 40px 35px;
+  }
+}
+
+/* -------------------------
+   MOBILE
+------------------------- */
+
+@media (max-width: 600px) {
+  body {
+    align-items: stretch;
+  }
+
+  .checker-strip {
+    height: 20px;
+
+    background-size: 30px 30px;
+    background-position: 0 0, 15px 15px;
+  }
+
+  .police-title {
+    padding: 8px 12px;
+
+    justify-content: flex-end;
+
+    gap: 6px;
+  }
+
+  .crest-placeholder {
+    width: 42px;
+    height: 42px;
+
+    font-size: 18px;
+  }
+
+  .police-title > div:last-child {
+    padding: 6px 10px;
+  }
+
+  .police-title span {
+    font-size: 11px;
+  }
+
+  .police-title strong {
+    font-size: 15px;
+  }
+
+  .case-file {
+    width: 100%;
+
+    margin: 0;
+
+    padding: 30px 20px 40px;
+
+    box-shadow: none;
+  }
+
+  .case-heading {
+    padding-bottom: 20px;
+    margin-bottom: 28px;
+  }
+
+  .case-reference {
+    font-size: 11px;
+
+    letter-spacing: 1px;
+  }
+
+  h1 {
+    font-size: 34px;
+
+    overflow-wrap: anywhere;
+  }
+
+  .case-subtitle {
+    font-size: 14px;
+  }
+
+  .evidence-panel {
+    gap: 24px;
+  }
+
+  .question {
+    padding-bottom: 22px;
+  }
+
+  .question label {
+    font-size: 16px;
+  }
+
+  .question input {
+    min-height: 52px;
+
+    padding: 14px 13px;
+
+    font-size: 16px;
+  }
+
+  button {
+    min-height: 56px;
+
+    margin-top: 28px;
+
+    font-size: 16px;
+  }
+
+  #message {
+    font-size: 15px;
+  }
+
+  .case-footer {
+    margin-top: 28px;
+  }
+
+  .key-overlay {
+    padding:
+      max(20px, env(safe-area-inset-top))
+      20px
+      max(20px, env(safe-area-inset-bottom));
+  }
+
+  .key-icon {
+    width: min(180px, 52vw);
+  }
+
+  .unlock-text {
+    margin-top: 24px;
+  }
+
+  .video-page {
+    width: 100%;
+
+    margin: 0;
+
+    padding: 30px 16px;
+  }
+
+  .reveal-video {
+    margin-top: 20px;
+
+    border-width: 3px;
+  }
+}
+
+/* -------------------------
+   VERY SMALL PHONES
+------------------------- */
+
+@media (max-width: 380px) {
+  .case-file {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+
+  h1 {
+    font-size: 30px;
+  }
+
+  .police-title span {
+    font-size: 10px;
+  }
+
+  .police-title strong {
+    font-size: 14px;
+  }
+
+  .crest-placeholder {
+    width: 38px;
+    height: 38px;
+  }
+}
+
+/* -------------------------
+   ACCESSIBILITY
+------------------------- */
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}

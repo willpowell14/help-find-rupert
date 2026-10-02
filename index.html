@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Puzzle</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+
+  <header class="police-header">
+    <div class="checker-strip"></div>
+
+    <div class="police-title">
+      </div>
+    </div>
+  </header>
+
+  <main class="case-file">
+
+    <div class="case-heading">
+      <p class="case-reference">SECURE POLICE PORTAL</p>
+      <h1>Locate Rupert</h1>
+      <p class="case-subtitle">
+        Enter the four pieces of evidence you have uncovered.
+      </p>
+    </div>
+
+    <div class="evidence-panel">
+
+      <div class="question">
+        <label for="answer1">
+          <span class="item-number">Item 001a-TKT + Item 001b-TBMAP</span>
+          Evidence One: Tube Line
+        </label>
+        <input
+          type="text"
+          id="answer1"
+          placeholder="Enter answer..."
+          autocomplete="off"
+        >
+      </div>
+
+      <div class="question">
+        <label for="answer2">
+          <span class="item-number">Item 002-BCARD</span>
+          Evidence Two: Station
+        </label>
+        <input
+          type="text"
+          id="answer2"
+          placeholder="Enter answer..."
+          autocomplete="off"
+        >
+      </div>
+
+      <div class="question">
+        <label for="answer3">
+          <span class="item-number">Item 003a-CAFE + Item 003b-MAP</span>
+          Evidence Three: Street name
+        </label>
+        <input
+          type="text"
+          id="answer3"
+          placeholder="Enter answer..."
+          autocomplete="off"
+        >
+      </div>
+
+      <div class="question">
+        <label for="answer4">
+          <span class="item-number">Item 004-BKRYGUIDE</span>
+          Evidence Four: Street number
+        </label>
+        <input
+          type="text"
+          id="answer4"
+          placeholder="Enter answer..."
+          autocomplete="off"
+        >
+      </div>
+
+    </div>
+
+    <button id="unlockButton">SUBMIT EVIDENCE</button>
+
+    <p id="message"></p>
+
+    <div class="case-footer">
+      CASE STATUS: <span>ACTIVE</span>
+    </div>
+
+  </main>
+
+  <script src="script.js"></script>
+
+</body>
+</html>
